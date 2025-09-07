@@ -15,6 +15,10 @@ function Home() {
   const [completedTodos, setCompletedTodos] = useState(new Set())
   const [showModal, setShowModal] = useState(false)
   const [todoDelete, setTodoDelete] = useState(null)
+  const [limitError, setLimitError] = useState('')
+  
+  const MAX_TODOS = 5
+  const remainingTodos = MAX_TODOS - todos.length
 
   const {
     register,
@@ -37,9 +41,15 @@ function Home() {
         // Modo edição
         await api.put(`/todos/${editTodoId}`, data);
         setEditTodoId(null);
+        setLimitError('');
       } else {
-        // Modo criação
+        // Modo criação - verificar limite
+        if (todos.length >= MAX_TODOS) {
+          setLimitError(`Limite máximo de ${MAX_TODOS} tarefas atingido!`);
+          return;
+        }
         await api.post("/todos", data);
+        setLimitError('');
       }
       getTodos();
       reset();
@@ -90,6 +100,20 @@ function Home() {
         <h1 className='title'>
           {editTodoId ? 'Altere sua Tarefa' : 'Cadastre sua Tarefa'}
         </h1>
+        
+        {/* Contador de tarefas */}
+        <div className="todo-counter">
+          <span className={`counter-text ${remainingTodos <= 0 ? 'limit-reached' : ''}`}>
+            Tarefas restantes: {remainingTodos} de {MAX_TODOS}
+          </span>
+        </div>
+        
+        {/* Mensagem de erro do limite */}
+        {limitError && (
+          <div className="error-limit">
+            {limitError}
+          </div>
+        )}
         <input
           type="text"
           placeholder="Digite a Tarefa*"
@@ -127,9 +151,10 @@ function Home() {
           </div>
         ) : (
           <input
-            className="btn"
+            className={`btn ${remainingTodos <= 0 ? 'btn-disabled' : ''}`}
             type="submit"
             value={"Cadastrar"}
+            disabled={remainingTodos <= 0}
           />
         )}
       </form>

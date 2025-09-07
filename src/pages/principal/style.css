@@ -37,13 +37,39 @@
             color: #ff6868;
             font-size: 12px;
             position: absolute;
-            margin: 102px 0 0 20px;
+            margin: 154px 0 0 20px;
         }
         & .error-description{
             color: #ff6868;
             font-size: 12px;
             position: absolute;
-            margin: 162px 0 0 20px;
+            margin: 215px 0 0 20px;
+        }
+
+        & .todo-counter {
+            text-align: center;
+            margin-bottom: 10px;
+            
+            & .counter-text {
+                color: #8b8ae1;
+                font-size: 14px;
+                font-weight: bold;
+                
+                &.limit-reached {
+                    color: #ff6868;
+                }
+            }
+        }
+
+        & .error-limit {
+            color: #ff6868;
+            font-size: 14px;
+            text-align: center;
+            background-color: rgba(255, 104, 104, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ff6868;
+            margin-bottom: 10px;
         }
     }
 
@@ -75,6 +101,16 @@
     & .btn{
         width: 100%;
         padding-left: 0px;
+        
+        &.btn-disabled {
+            background-color: #666;
+            cursor: not-allowed;
+            opacity: 0.6;
+            
+            &:hover {
+                opacity: 0.6;
+            }
+        }
     }
 
     .card {
@@ -93,11 +129,12 @@
         }
 
         & p {
-            color: #fff;
+            color: #8b8ae1;
             font-weight: bold;
 
             & span {
                 font-weight: normal;
+                color: #fff;
             }
 
         }
