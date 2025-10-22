@@ -1,0 +1,39 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "todo-frontend-pearl-gamma.vercel",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "todo-frontend-pearl-gamma.vercel",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "https://todo-frontend-pearl-gamma.vercel.app/favicon.ico",
+      "type": "image/png",
+      "sizes": "32x32",
+      "isSquare": true,
+      "isPng": true,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 32,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    },
+    {
+      "src": "https://todo-frontend-pearl-gamma.vercel.app/favicon.ico",
+      "type": "image/png",
+      "sizes": "32x32",
+      "isSquare": true,
+      "isPng": true,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 32,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    }
+  ]
+}
