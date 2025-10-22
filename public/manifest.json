@@ -1,39 +1,29 @@
 {
-  "background_color": "#ffffff",
-  "dir": "ltr",
-  "display": "standalone",
-  "name": "todo-frontend-pearl-gamma.vercel",
-  "orientation": "any",
-  "scope": "/",
-  "short_name": "todo-frontend-pearl-gamma.vercel",
+  "name": "Todo List App",
+  "short_name": "Todo App",
+  "description": "A simple and effective todo list application",
   "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
   "theme_color": "#ffffff",
+  "orientation": "any",
   "icons": [
     {
-      "src": "https://todo-frontend-pearl-gamma.vercel.app/favicon.ico",
-      "type": "image/png",
+      "src": "/favicon.ico",
       "sizes": "32x32",
-      "isSquare": true,
-      "isPng": true,
-      "isWebp": false,
-      "isJpg": false,
-      "width": 32,
-      "is512x512": false,
-      "is256x256": false,
-      "is192x192": false
+      "type": "image/x-icon"
     },
     {
-      "src": "https://todo-frontend-pearl-gamma.vercel.app/favicon.ico",
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
       "type": "image/png",
-      "sizes": "32x32",
-      "isSquare": true,
-      "isPng": true,
-      "isWebp": false,
-      "isJpg": false,
-      "width": 32,
-      "is512x512": false,
-      "is256x256": false,
-      "is192x192": false
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
